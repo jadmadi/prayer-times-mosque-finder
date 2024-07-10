@@ -119,7 +119,7 @@ function createMosqueItem(place, userLat, userLon) {
     const mosqueItem = document.createElement('div');
     mosqueItem.className = 'bg-gray-100 p-4 rounded-lg';
     mosqueItem.innerHTML = `
-        <h3 class="font-bold text-xl mb-2">${place.tags && place.tags.name ? place.tags.name : 'Unnamed Mosque'}</h3>
+        <h3 class="font-bold text-xl mb-2">🕌  ${place.tags && place.tags.name ? place.tags.name : 'Unnamed Mosque'}</h3>
         <p>Distance: ${distance.toFixed(2)} km</p>
         <a href="${directionsUrl}" target="_blank" class="text-blue-500 hover:text-blue-700">Get Directions</a>
     `;

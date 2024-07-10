@@ -53,9 +53,17 @@ function getPrayerTimes(latitude, longitude) {
             const date = response.data.data.date.readable;
             
             const prayerNames = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
-            const colors = ['bg-red-200', 'bg-orange-200', 'bg-yellow-200', 'bg-green-200', 'bg-blue-200', 'bg-indigo-200'];
-            
-            prayerTimesDiv.innerHTML = `<p class="font-bold text-center mb-2 text-xl">${date}</p>`;
+            const colors = [
+              'bg-red-200', // Fajr (pre-dawn, reddish hue)
+              'bg-orange-400', // Sunrise (brighter orange)
+              'bg-yellow-200', // Dhuhr (midday, yellow)
+              'bg-green-200', // Asr (afternoon, greenish hue)
+              'bg-blue-600', // Maghrib (sunset, blueish)
+              'bg-indigo-600' // Isha (night, indigo)
+            ];
+            prayerTimesDiv.innerHTML = `<i class="fas fa-archway text-green-700"></i>
+
+`;
             
             const now = new Date();
             nextPrayerTime = null;
