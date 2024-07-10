@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times & Mosque Finder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@700&family=Andika&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        h1, h2 { font-family: 'Amaranth', sans-serif; }
+        body, input, button { font-family: 'Andika', sans-serif; }
+        #map { height: 300px; width: 100%; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-3xl">
+        <div class="text-center mb-4">
+            <span class="text-6xl">🕌</span>
+        </div>
+        <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">Prayer Times & Mosque Finder</h1>
+        
+        <div class="mb-4 text-center text-xl">
+            <div id="dateTime" class="font-bold"></div>
+            <div id="countdown" class="text-2xl mt-2"></div>
+        </div>
+        
+        <div class="mb-4 text-center text-xl">
+            <span id="sunPosition" class="font-bold"></span>
+            <span id="currentSunIcon" class="ml-2 text-2xl"></span>
+        </div>
+        
+        <div class="mb-4">
+            <button id="detectLocation" class="w-full bg-blue-500 text-white py-3 px-4 rounded text-xl hover:bg-blue-600 transition duration-300">
+                Detect Location & Get Prayer Times
+            </button>
+        </div>
+        
+        <div class="mb-4">
+            <input type="text" id="cityInput" placeholder="Or enter city name" class="w-full p-3 border rounded text-xl">
+        </div>
+        
+        <button id="getCityPrayerTimes" class="w-full bg-green-500 text-white py-3 px-4 rounded text-xl hover:bg-green-600 transition duration-300 mb-4">
+            Get Prayer Times for City
+        </button>
+        
+        <div id="nextPrayer" class="mb-4 text-center font-bold text-2xl"></div>
+        
+        <div id="prayerTimes" class="space-y-2 mb-4 text-lg"></div>
+        
+        <div id="mosqueSection" class="hidden">
+            <h2 class="text-2xl font-bold mb-2 text-center">Nearby Mosques</h2>
+
+            <div id="map" class="mb-4"></div>
+
+            <div id="mosqueList" class="space-y-4 text-lg"></div>
+        </div>
+    </div>
+
+    <script src="js/dateTime.js"></script>
+    <script src="js/sunPosition.js"></script>
+    <script src="js/prayerTimes.js"></script>
+<script src="js/maps.js"></script>    
+<script src="js/main.js"></script>
+</body>
+</html>
