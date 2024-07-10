@@ -1,3 +1,6 @@
+![Alt text for screenshot 1](https://ptmf.madi.se/images/screenshot-1.png)
+![Alt text for screenshot 2](https://ptmf.madi.se/images/screenshot-2.png)
+
 # Prayer Times & Mosque Finder
 
 بسم الله الرحمن الرحيم
