@@ -1,7 +1,7 @@
 /*
     Prayer Times & Mosque Finder
     Copyright (C) 2024 Jad Madi
- 
+
 Author: Jad Madi
 GitHub: @jadmadi (https://github.com/jadmadi)
 email: jad@madi.se
@@ -51,7 +51,7 @@ function getPrayerTimes(latitude, longitude) {
         .then(response => {
             const timings = response.data.data.timings;
             const date = response.data.data.date.readable;
-            
+
             const prayerNames = ['Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
             const colors = [
               'bg-red-200', // Fajr (pre-dawn, reddish hue)
@@ -64,7 +64,7 @@ function getPrayerTimes(latitude, longitude) {
             prayerTimesDiv.innerHTML = `<i class="fas fa-archway text-green-700"></i>
 
 `;
-            
+
             const now = new Date();
             nextPrayerTime = null;
 
@@ -72,7 +72,7 @@ function getPrayerTimes(latitude, longitude) {
                 const prayerTime = new Date(`${date} ${timings[prayer]}`);
                 const prayerSunPosition = calculateSunPosition(prayerTime, latitude, longitude);
                 const timeUntilPrayer = prayerTime - now;
-                
+
                 if (timeUntilPrayer > 0 && !nextPrayerTime) {
                     nextPrayerTime = prayerTime;
                 }
@@ -90,11 +90,11 @@ function getPrayerTimes(latitude, longitude) {
             });
 
             updateNextPrayerCountdown();
-            
+
             // Initialize map and search for mosques
             initMap(latitude, longitude);
             searchNearbyMosques(latitude, longitude);
-            
+
             // Show the mosque section
             mosqueSection.classList.remove('hidden');
         })

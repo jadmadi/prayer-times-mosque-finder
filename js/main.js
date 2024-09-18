@@ -146,6 +146,7 @@ function updatePrayerTimes(timings, date) {
     });
 
     updateNextPrayerCountdown();
+    updateLastThird(timings);
 }
 
 // Function to fetch prayer times
